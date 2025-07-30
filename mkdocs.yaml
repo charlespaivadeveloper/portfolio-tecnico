@@ -1,5 +1,7 @@
 site_name: Portfólio Técnico - Charles Paiva
-site_url: https://charlespaiva.github.io/portfolio-charlespaiva/
+site_url: https://charlespaivadeveloper.github.io/portfolio-tecnico/
+use_directory_urls: true
+docs_dir: docs
 theme:
   name: material
 nav:
