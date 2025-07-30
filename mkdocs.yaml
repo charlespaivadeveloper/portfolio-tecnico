@@ -1,0 +1,9 @@
+site_name: Portfólio Técnico - Charles Paiva
+site_url: https://charlespaiva.github.io/portfolio-charlespaiva/
+theme:
+  name: material
+nav:
+  - Home: index.md
+  - Projetos:
+      - Projeto 1: projetos/projeto1.md
+      - Projeto 2: projetos/projeto2.md
