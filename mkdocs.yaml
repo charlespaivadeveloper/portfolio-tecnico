@@ -9,3 +9,5 @@ nav:
   - Projetos:
       - Projeto 1: projetos/projeto1.md
       - Projeto 2: projetos/projeto2.md
+  - System Design Problems:
+      - Design a scheduled digital transaction system: system-design-problems/design-a-scheduled-digital-transaction-system.md
