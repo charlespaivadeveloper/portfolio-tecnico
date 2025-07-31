@@ -221,7 +221,8 @@ graph TD
 
 Sequence diagram for a transaction scheduling flow:
 
-```mermaid
+mermaid
+
 sequenceDiagram
     participant Client
     participant API_Gateway as API Gateway
@@ -238,7 +239,7 @@ sequenceDiagram
     Notification_Service-->>-Transaction_Service: Confirm send
     Transaction_Service-->>-API_Gateway: Return confirmation
     API_Gateway-->>-Client: Display result
-```
+
 
 ## Detailed Component Design
 
