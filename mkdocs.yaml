@@ -13,8 +13,10 @@ nav:
       - Design a scheduled digital transaction system: system-design-problems/design-a-scheduled-digital-transaction-system.md
 
 
-markdown_extensions:
-  - pymdownx.superfences
+markdown_extensions:      
+  - meta
+  - pymdownx.details
+  - pymdownx.superfences  
   - pymdownx.tabbed
   - pymdownx.details
   - pymdownx.snippets
