@@ -1,0 +1,604 @@
+/* ── Custom properties ───────────────────────────── */
+:root {
+  --porto-ink:     #f2f0e8;
+  --porto-muted:   #aab4ae;
+  --porto-surface: #101716;
+  --porto-surf2:   #17201e;
+  --porto-line:    #31413d;
+  --porto-accent:  #68e0b5;
+  --porto-warm:    #f4bb62;
+}
+
+/* ── Material color scheme override ─────────────── */
+[data-md-color-scheme="slate"] {
+  --md-default-bg-color:           #101716;
+  --md-default-bg-color--light:    #17201e;
+  --md-default-fg-color:           #f2f0e8;
+  --md-default-fg-color--light:    rgba(242,240,232,.72);
+  --md-default-fg-color--lighter:  rgba(242,240,232,.48);
+  --md-default-fg-color--lightest: rgba(242,240,232,.12);
+  --md-primary-fg-color:           #68e0b5;
+  --md-primary-bg-color:           #07100d;
+  --md-accent-fg-color:            #68e0b5;
+  --md-code-bg-color:              #17201e;
+  --md-code-fg-color:              #f2f0e8;
+  --md-typeset-a-color:            #68e0b5;
+  --md-admonition-bg-color:        #17201e;
+  --md-typeset-table-color:        rgba(49,65,61,.4);
+  --md-shadow-z1: none;
+  --md-shadow-z2: none;
+  --md-shadow-z3: none;
+}
+
+/* ── Background grid ─────────────────────────────── */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: .17;
+  background-image:
+    linear-gradient(var(--porto-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--porto-line) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: linear-gradient(to bottom, black, transparent 72%);
+  -webkit-mask-image: linear-gradient(to bottom, black, transparent 72%);
+}
+
+/* ── Header ──────────────────────────────────────── */
+.md-header {
+  background: rgba(16, 23, 22, .94) !important;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--porto-line) !important;
+  box-shadow: none !important;
+}
+
+.md-header[data-md-state="shadow"] {
+  box-shadow: none !important;
+}
+
+.md-header__title {
+  font-family: ui-monospace, SFMono-Regular, Consolas, monospace !important;
+  font-weight: 700;
+  letter-spacing: .13em;
+  font-size: .78rem;
+  text-transform: uppercase;
+}
+
+.md-tabs {
+  background: rgba(16, 23, 22, .94) !important;
+  border-bottom: 1px solid var(--porto-line);
+}
+
+.md-tabs__link {
+  font-size: .76rem;
+  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  opacity: .65;
+}
+
+.md-tabs__link--active,
+.md-tabs__link:hover {
+  opacity: 1;
+}
+
+/* ── Navigation ──────────────────────────────────── */
+.md-nav {
+  font-size: .78rem;
+}
+
+.md-nav__title {
+  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+  font-size: .68rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--porto-accent);
+}
+
+.md-nav__link--active {
+  color: var(--porto-accent) !important;
+}
+
+/* ── Sidebar ─────────────────────────────────────── */
+.md-sidebar {
+  border-right: 1px solid var(--porto-line);
+}
+
+.md-sidebar--secondary {
+  border-right: none;
+  border-left: 1px solid var(--porto-line);
+}
+
+/* ── Typography ──────────────────────────────────── */
+.md-typeset h1 {
+  color: var(--porto-ink);
+  font-weight: 800;
+  font-size: clamp(1.9rem, 4vw, 3.4rem);
+  line-height: .95;
+  letter-spacing: -.045em;
+  margin-top: 0;
+}
+
+.md-typeset h2 {
+  color: var(--porto-ink);
+  font-weight: 800;
+  font-size: clamp(1.4rem, 2.5vw, 2.2rem);
+  line-height: 1;
+  letter-spacing: -.04em;
+  border-bottom: 1px solid var(--porto-line);
+  padding-bottom: .45em;
+}
+
+.md-typeset h3 {
+  font-size: 1.1rem;
+  letter-spacing: -.02em;
+}
+
+/* ── Tables ──────────────────────────────────────── */
+.md-typeset table:not([class]) {
+  border: 1px solid var(--porto-line);
+  border-radius: 0;
+  box-shadow: none;
+  font-size: .88rem;
+}
+
+.md-typeset table:not([class]) th {
+  background: var(--porto-surf2);
+  border-bottom: 1px solid var(--porto-line);
+  color: var(--porto-accent);
+  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+  font-size: .68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  padding: 10px 14px;
+}
+
+.md-typeset table:not([class]) td {
+  border-bottom: 1px solid var(--porto-line);
+  padding: 10px 14px;
+  vertical-align: top;
+}
+
+.md-typeset table:not([class]) tr:last-child td {
+  border-bottom: 0;
+}
+
+.md-typeset table:not([class]) tr:hover td {
+  background: var(--porto-surf2);
+}
+
+/* ── Code ────────────────────────────────────────── */
+.md-typeset pre {
+  border: 1px solid var(--porto-line);
+  border-radius: 0 !important;
+  box-shadow: none;
+}
+
+.md-typeset pre > code {
+  border-radius: 0;
+}
+
+.md-typeset :not(pre) > code {
+  color: var(--porto-warm);
+  background: var(--porto-surf2);
+  border-radius: 0;
+  padding: .1em .35em;
+  font-size: .84em;
+}
+
+.md-clipboard {
+  color: var(--porto-muted) !important;
+}
+
+/* ── Admonitions ─────────────────────────────────── */
+.md-typeset .admonition,
+.md-typeset details {
+  border-radius: 0 !important;
+  box-shadow: none;
+  border: 1px solid var(--porto-line);
+  border-left-width: 3px;
+}
+
+.md-typeset .admonition.warning,
+.md-typeset details.warning {
+  border-left-color: var(--porto-warm);
+}
+
+.md-typeset .admonition-title::before,
+.md-typeset summary::before {
+  border-radius: 0;
+}
+
+/* ── Search ──────────────────────────────────────── */
+.md-search__form {
+  border-radius: 0 !important;
+  background: var(--porto-surf2) !important;
+  border: 1px solid var(--porto-line) !important;
+}
+
+.md-search__input {
+  font-size: .82rem;
+}
+
+/* ── Footer ──────────────────────────────────────── */
+.md-footer {
+  background: var(--porto-surface);
+  border-top: 1px solid var(--porto-line);
+}
+
+.md-footer-meta {
+  background: var(--porto-surf2);
+}
+
+/* ── Grid cards (Material built-in) ─────────────── */
+.md-typeset .grid.cards > ul > li,
+.md-typeset .grid.cards > ol > li {
+  border: 1px solid var(--porto-line) !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  background: var(--porto-surface);
+  transition: background .18s ease;
+}
+
+.md-typeset .grid.cards > ul > li:hover,
+.md-typeset .grid.cards > ol > li:hover {
+  background: var(--porto-surf2);
+}
+
+/* ════════════════════════════════════════════════════
+   HOME PAGE — portal sections
+   ════════════════════════════════════════════════════ */
+
+/* Hero ─────────────────────────────────────────────── */
+.porto-hero {
+  padding: 72px 0 56px;
+}
+
+.porto-eyebrow {
+  color: var(--porto-accent);
+  text-transform: uppercase;
+  letter-spacing: .18em;
+  font: 700 .74rem/1.4 ui-monospace, SFMono-Regular, Consolas, monospace;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.porto-eyebrow::before {
+  content: "";
+  display: block;
+  width: 42px;
+  height: 1px;
+  background: var(--porto-accent);
+  flex-shrink: 0;
+}
+
+.porto-hero .md-typeset h1,
+.porto-h1 {
+  max-width: 1050px;
+  font-size: clamp(3rem, 7.5vw, 7rem) !important;
+  line-height: .93 !important;
+  letter-spacing: -.065em !important;
+  margin: 0 0 26px !important;
+  border: none !important;
+  color: var(--porto-ink) !important;
+}
+
+.porto-hero .md-typeset h1 em,
+.porto-h1 em {
+  color: var(--porto-warm);
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.porto-copy {
+  max-width: 680px;
+  color: var(--porto-muted);
+  font-size: clamp(1rem, 1.8vw, 1.2rem);
+  margin-bottom: 34px;
+  line-height: 1.55;
+}
+
+.porto-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.porto-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 20px;
+  border: 1px solid var(--porto-line);
+  text-decoration: none !important;
+  font-weight: 700;
+  font-size: .88rem;
+  color: var(--porto-ink) !important;
+  transition: border-color .15s, background .15s;
+  border-radius: 0;
+}
+
+.porto-btn:hover {
+  border-color: var(--porto-ink);
+}
+
+.porto-btn--primary {
+  background: var(--porto-accent);
+  border-color: var(--porto-accent);
+  color: #07100d !important;
+}
+
+.porto-btn--primary:hover {
+  background: #8be8c7;
+  border-color: #8be8c7;
+}
+
+/* Metrics ──────────────────────────────────────────── */
+.porto-metrics {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-bottom: 80px;
+}
+
+.porto-metrics article {
+  min-height: 136px;
+  padding: 24px;
+  border: 1px solid var(--porto-line);
+  border-right: 0;
+  background: var(--porto-surface);
+}
+
+.porto-metrics article:last-child {
+  border-right: 1px solid var(--porto-line);
+}
+
+.porto-metrics strong {
+  display: block;
+  color: var(--porto-warm);
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  letter-spacing: -.055em;
+  line-height: 1;
+  margin-bottom: 8px;
+  font-weight: 800;
+}
+
+.porto-metrics span {
+  color: var(--porto-muted);
+  font-size: .82rem;
+}
+
+/* Signal panel ─────────────────────────────────────── */
+.porto-signal {
+  padding: 44px;
+  background: var(--porto-accent);
+  color: #07100d;
+  margin-bottom: 80px;
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  gap: 40px 70px;
+}
+
+.porto-signal-kicker {
+  color: #17392e;
+  text-transform: uppercase;
+  letter-spacing: .18em;
+  font: 700 .74rem/1.4 ui-monospace, SFMono-Regular, Consolas, monospace;
+  margin-bottom: 14px;
+}
+
+.porto-signal h2 {
+  font-size: clamp(2rem, 4.5vw, 4rem) !important;
+  line-height: 1 !important;
+  letter-spacing: -.045em !important;
+  color: #07100d !important;
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  font-weight: 800;
+}
+
+.porto-signal-body {
+  align-self: end;
+  margin: 0;
+  font-size: 1rem;
+  color: #17392e;
+  line-height: 1.55;
+}
+
+.porto-signal-list {
+  grid-column: 1 / -1;
+  border-top: 1px solid rgba(7,16,13,.35);
+  padding-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 14px;
+  font: 700 .78rem/1.4 ui-monospace, SFMono-Regular, Consolas, monospace;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+}
+
+/* Section heading ──────────────────────────────────── */
+.porto-section-kicker {
+  color: var(--porto-accent);
+  text-transform: uppercase;
+  letter-spacing: .18em;
+  font: 700 .74rem/1.4 ui-monospace, SFMono-Regular, Consolas, monospace;
+  margin-bottom: 10px;
+}
+
+.porto-section-heading h2 {
+  font-size: clamp(1.8rem, 3.5vw, 3rem) !important;
+  letter-spacing: -.04em !important;
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 0 32px !important;
+}
+
+/* Project cards ────────────────────────────────────── */
+.porto-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid var(--porto-line);
+  border-left: 1px solid var(--porto-line);
+  margin-bottom: 72px;
+}
+
+.porto-card {
+  min-height: 360px;
+  padding: 24px;
+  border-right: 1px solid var(--porto-line);
+  border-bottom: 1px solid var(--porto-line);
+  display: flex;
+  flex-direction: column;
+  transition: background .18s ease;
+}
+
+.porto-card:hover {
+  background: var(--porto-surf2);
+}
+
+.porto-card-topline {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 28px;
+}
+
+.porto-card-category {
+  color: var(--porto-accent);
+  font: 700 .65rem/1.3 ui-monospace, SFMono-Regular, Consolas, monospace;
+  text-transform: uppercase;
+  letter-spacing: .09em;
+}
+
+.porto-card-stage {
+  border: 1px solid var(--porto-line);
+  padding: 4px 7px;
+  color: var(--porto-muted);
+  font: 700 .64rem/1.3 ui-monospace, SFMono-Regular, Consolas, monospace;
+  text-transform: uppercase;
+  letter-spacing: .07em;
+}
+
+.porto-card h3 {
+  font-size: 1.3rem;
+  line-height: 1.1;
+  letter-spacing: -.025em;
+  margin-bottom: 10px;
+  color: var(--porto-ink);
+}
+
+.porto-card-desc {
+  color: var(--porto-muted);
+  font-size: .9rem;
+  line-height: 1.5;
+  flex: 1;
+  margin: 0;
+}
+
+.porto-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin: 14px 0 20px;
+  padding: 0;
+  list-style: none;
+}
+
+.porto-card-tags li {
+  padding: 3px 7px;
+  background: #22302d;
+  color: #c6d1cd;
+  font: .64rem/1.3 ui-monospace, SFMono-Regular, Consolas, monospace;
+}
+
+.porto-card-footer {
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid var(--porto-line);
+}
+
+.porto-card-link {
+  color: var(--porto-warm) !important;
+  font-size: .82rem;
+  font-weight: 700;
+  text-decoration: none !important;
+}
+
+.porto-card-link:hover {
+  text-decoration: underline !important;
+  text-underline-offset: 4px;
+}
+
+/* System design section ────────────────────────────── */
+.porto-sysdesign {
+  margin-bottom: 24px;
+}
+
+.porto-sysdesign h2 {
+  font-size: clamp(1.3rem, 2.5vw, 2rem) !important;
+  border-bottom: 1px solid var(--porto-line) !important;
+  padding-bottom: .45em !important;
+  margin-bottom: 16px !important;
+}
+
+/* ── Responsive ──────────────────────────────────── */
+@media (max-width: 960px) {
+  .porto-metrics {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .porto-metrics article:nth-child(2) {
+    border-right: 1px solid var(--porto-line);
+  }
+  .porto-metrics article:nth-child(n+3) {
+    border-top: 0;
+  }
+  .porto-signal {
+    grid-template-columns: 1fr;
+  }
+  .porto-signal-list {
+    grid-column: auto;
+  }
+  .porto-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .porto-hero {
+    padding-top: 48px;
+  }
+  .porto-btn {
+    width: 100%;
+  }
+  .porto-metrics {
+    grid-template-columns: 1fr 1fr;
+  }
+  .porto-metrics article {
+    min-height: 110px;
+    padding: 18px;
+  }
+  .porto-signal {
+    padding: 28px 20px;
+  }
+  .porto-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    transition-duration: .01ms !important;
+  }
+}
