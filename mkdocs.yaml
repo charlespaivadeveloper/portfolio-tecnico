@@ -18,6 +18,7 @@ nav:
       - Decisões e Diagramas: arquitetura/index.md
   - System Design Problems:
       - Design a scheduled digital transaction system: system-design-problems/design-a-scheduled-digital-transaction-system.md
+      - Design a Digital Wallet: system-design-problems/design-a-digital-wallet.md
 
 markdown_extensions:
   - meta
