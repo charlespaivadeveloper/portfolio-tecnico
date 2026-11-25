@@ -4,10 +4,19 @@ use_directory_urls: true
 docs_dir: docs
 theme:
   name: material
+  palette:
+    scheme: slate
+  font:
+    text: Inter
+    code: JetBrains Mono
   features:
     - content.code.copy
     - navigation.sections
+    - navigation.tabs
     - navigation.top
+
+extra_css:
+  - stylesheets/extra.css
 nav:
   - Início: index.md
   - Projetos:
