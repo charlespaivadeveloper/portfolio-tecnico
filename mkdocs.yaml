@@ -4,21 +4,27 @@ use_directory_urls: true
 docs_dir: docs
 theme:
   name: material
+  features:
+    - content.code.copy
+    - navigation.sections
+    - navigation.top
 nav:
-  - Home: index.md
+  - Início: index.md
   - Projetos:
-      - Projeto 1: projetos/projeto1.md
-      - Projeto 2: projetos/projeto2.md
+      - Enterprise RAG Java: projetos/enterprise-rag-java.md
+      - Spring AI MCP Clean: projetos/spring-ai-mcp-clean.md
+      - Nomad Tax Calculation Engine: projetos/nomad-tax-calculation-engine.md
+  - Arquitetura:
+      - Decisões e Diagramas: arquitetura/index.md
   - System Design Problems:
       - Design a scheduled digital transaction system: system-design-problems/design-a-scheduled-digital-transaction-system.md
 
-
-markdown_extensions:      
+markdown_extensions:
   - meta
   - pymdownx.details
-  - pymdownx.superfences  
-  - pymdownx.tabbed
-  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
   - pymdownx.snippets
   - pymdownx.tasklist
   - pymdownx.tilde
@@ -26,17 +32,17 @@ markdown_extensions:
   - pymdownx.magiclink
   - pymdownx.betterem:
       smart_enable: all
-  - pymdownx.highlight
+  - pymdownx.highlight:
+      anchor_linenums: true
   - pymdownx.inlinehilite
   - pymdownx.keys
   - pymdownx.mark
   - pymdownx.caret
   - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - attr_list
   - admonition
-  - codehilite
   - toc:
       permalink: true
   - md_in_html
